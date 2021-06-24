@@ -43,6 +43,10 @@ class GattService {
     throw new Error('Characteristic not available')
   }
 
+  async getCharacteristicById(id) {
+    return this._characteristics[Object.keys(this._characteristics)[id]];
+  }
+
   async toString () {
     return this.getUUID()
   }
